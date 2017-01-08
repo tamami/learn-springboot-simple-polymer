@@ -1,22 +1,26 @@
-<dom-module id="form-nip">
-    <template>
-        <link rel="import" href="../bower_components/iron-form/iron-form.html"/>
-        <link rel="import" href="../bower_components/paper-input/paper-input.html" />
-        <link rel="import" href="../bower_components/paper-button/paper-button.html" />
-
-        <form is="iron-form" id="formNip" method="get" action="/getNip">
-            <paper-input name="nip" label="NIP" aria-required="true"></paper-input>
-            <paper-button raised="true" onClick="submit(event)">Proses</paper-button>
-        </form>
-
-        <app-router>
-            <app-route path="result" import="result.html"></app-route>
-        </app-router>
-    </template>
-    <script>
-        function submit(event) {
-            Polymer.dom(event).localTarget.parentElement.submit();
-            document.querySelector('app-router').go("result");
+<html>
+<head>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+    <link rel="import" href="bower_components/paper-card/paper-card.html"></link>
+    <link rel="import" href="bower_components/paper-input/paper-input.html"></link>
+    <link rel="import" href="bower_components/paper-button/paper-button.html"></link>
+    <link rel="import" href="bower_components/paper-material/paper-material.html">
+</head>
+<body>
+    <paper-material>
+        <paper-card elevation="2">
+            <paper-input label="NIP" value="{{nip}}"></paper-input>
+        </paper-card>
+    </paper-material>
+    <style>
+        paper-card {
+            position: absolute;
+            bottom: 200px;
+            left: 50px;
+            z-index: 1;
         }
-    </script>
-</dom-module>
+    </style>
+    <h3>Keluar ga??</h3>
+</body>
+</html>
+
